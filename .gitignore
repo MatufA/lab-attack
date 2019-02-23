@@ -3,11 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*.pdf
+*.csv
+*.rtf
+
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+.idea/
 build/
 develop-eggs/
 dist/

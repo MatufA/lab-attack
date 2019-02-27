@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 # Python mail script with smtplib, email.utils and email.mime.text.
 
@@ -14,13 +15,11 @@ from email.mime.nonmultipart import MIMENonMultipart
 from email.mime.text import MIMEText
 
 # --- create our message ---
-
-# Create our message.
-message = """From: Ariel <do-not-replay@ariel.ac.il>
+message = """From: אוניברסיטת אריאל בשומרון - אוניברסטת אריאל - גביה <do-not-replay@ariel.ac.il>
 To: meve <meve@getnada.com>
-Subject: Test
+Subject: הסדרת תשלום לשנה"ל תשע"ט
 
-This is a test e-mail message.
+הסדרת תשלום לשנה"ל תשע"ט.
 """
 msg = MIMEText(message)
 sender = 'do-not-replay@ariel.ac.il'
@@ -28,12 +27,12 @@ receivers = ['meve@getnada.com']
 
 message = MIMEMultipart()
 message['To'] = email.utils.formataddr(('meve', 'meve@getnada.com'))
-message['From'] = email.utils.formataddr(('Ariel', 'do_not_replay@ariel.ac.il'))
-message['Subject'] = 'Test'
+message['From'] = email.utils.formataddr(('אוניברסיטת אריאל בשומרון - אוניברסטת אריאל - גביה', 'do_not_replay@ariel.ac.il'))
+message['Subject'] = 'הסדרת תשלום לשנה"ל תשע"ט'
 message.attach(msg)
 
 # --- add an attachment ---
-file_name = "test_result.pdf"
+file_name = "הסדרת תשלום לשנה_ל תשע_ט.pdf"
 
 part = MIMEBase('application', "octet-stream")
 part.set_payload(open(os.path.join(os.path.dirname(__file__), file_name), 'rb').read())
